@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="todo-filter">
+    <select #selectList (change)="filterSelect.emit(selectList.value)" class="form-control">
+      <option *ngFor="let filter of filters" value="{{filter.action}}">
+        {{filter.friendly}}
+      </option>
+    </select>
+  </div>
+</div>

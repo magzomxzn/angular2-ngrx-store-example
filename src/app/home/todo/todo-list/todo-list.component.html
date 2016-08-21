@@ -1,0 +1,14 @@
+<strong>Completed: {{todosModel.completedTodos}}/{{todosModel.totalTodos}}</strong>
+<ul class="todo-list">
+  <li *ngFor="let todo of todosModel.filteredTodos">
+    <strong [class.complete]="todo.complete">{{todo.description}}</strong>
+    <button class="pure-button pure-button-primary"
+            (click)="toggleTodo.emit(todo.id)">
+      {{todo.complete ? 'Undo' : 'Complete'}}
+    </button>
+    <button class="pure-button button-error"
+            (click)="removeTodo.emit(todo.id)">
+      Remove
+    </button>
+  </li>
+</ul>

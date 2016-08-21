@@ -1,0 +1,13 @@
+<todo-input
+  (addTodo)="addTodo($event)">
+</todo-input>
+<todo-filter
+  (filterSelect)="updateFilter($event)">
+</todo-filter>
+<todo-list
+  [todosModel]="todosModel$ | async"
+  (removeTodo)="removeTodo($event)"
+  (toggleTodo)="toggleTodo($event)">
+</todo-list>
+
+
